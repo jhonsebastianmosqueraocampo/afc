@@ -3,41 +3,43 @@ import { Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import TeacherCard from "./TeacherCard";
 function TeamSwiper() {
   const swiperRef = useRef<SwiperType | null>(null);
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   const teachers = [
     {
-      image: `/assets/${isDesktop ? "7PASTORdt" : "8PASTOR"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "7PASTORdt" : "8PASTOR"}.webp`,
       name: "Pastor Ricardo Rodríguez Bermúdez",
       description:
         "Ingeniero Industrial, Magister en estudios teológicos de Southwestern Báptist Theological Seminary y Doctor en Ministerio – Global University.  Pastor principal, fundador del Centro Mundial de Avivamiento y del Seminario Bíblico Avivamiento Faith College.",
       bg: "#A61A2D",
     },
     {
-      image: `/assets/${isDesktop ? "8PASTORAdt" : "9PASTORA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "8PASTORAdt" : "9PASTORA"}.webp`,
       name: "Pastora María Patricia Pérez de la Torre",
       description:
         "Teóloga de la Universidad Bautista de Cali y Magíster en Estudios Teológicos de Southwestern Baptist Theological Seminary. Fundadora y pastora principal del Centro Mundial de Avivamiento y del Seminario Bíblico Avivamiento Faith College.",
       bg: "#090A0A",
     },
     {
-      image: `/assets/${isDesktop ? "9JUANYdt" : "10JUANY"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "9JUANYdt" : "10JUANY"}.webp`,
       name: "Pastor Juan Sebastián Rodríguez Pérez",
       description:
         "Teólogo del Seminario Bíblico Asambleas de Dios, Magíster en Divinidades de Fuller Theological Seminary, Magíster en Estudios Teológicos de Southwestern Baptist Theological Seminary y Doctor en Ministerio de Global University. Director de Educación Teológica del Centro Mundial de Avivamiento.",
       bg: "#A61A2D",
     },
     {
-      image: `/assets/${isDesktop ? "10ANAdt" : "11ANA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "10ANAdt" : "11ANA"}.webp`,
       name: "Pastora Ana María Pardo de Rodríguez",
       description:
         "Teóloga de la Universidad Bautista de Cali, Magíster en Estudios Teológicos de Southwestern Baptist Theological Seminary y Candidata a Doctorado en Ministerio de Fuller Theological Seminary Rectora del Seminario Bíblico Avivamiento Faith College.",
       bg: "#090A0A",
     },
     {
-      image: `/assets/${isDesktop ? "11MAESTROSdt" : "12MAESTROS"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "11MAESTROSdt" : "12MAESTROS"}.webp`,
       name: "",
       description:
         "- Pastores Ricardo Mauricio y Sunner Rodríguez- Pastora Lina Juliana Rodríguez- Pastores Alejandro y Liliana Rodríguez- Pastora Nancy Salom Califa- Pastores Arturo y Nancy Salom- Pastores Álvaro y Duvy Pardo- Pastores Juan Pablo y Mónica Velandia- Pastores Alejandro y Angélica Valdés- Pastora Dora Plazas- Andrés David Pardo Guzmán- Pastor Pedro Nel Torres- Pastor Edgar Enrique Torres- Pastor Orlando Horacio Vélez- Nataly Andrea Salom Califa- Alejandra Salom Califa- Diana Caro- Benjamin Castillo Rodríguez- Emanuel Rodríguez Mayorga- María Fernanda Torres Castro",

@@ -6,13 +6,15 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import { useBreadcrumbClick } from "../../hooks/useHashNavigation";
 function HistorySwiper() {
   const swiperRef = useRef<SwiperType | null>(null);
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   const slides = [
     {
-      image: `/assets/${isDesktop ? "2HISTORIAdt" : "2HISTORIA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "2HISTORIAdt" : "2HISTORIA"}.webp`,
       description: `A mediados del año 2015, los Pastores Ricardo y Ma. Patricia
                     Rodríguez compartieron con la congregación del Centro
                     Mundial de Avivamiento un profundo sentir del Espíritu
@@ -21,34 +23,34 @@ function HistorySwiper() {
       title: "El sentir del Espíritu",
     },
     {
-      image: `/assets/${isDesktop ? "3HISTORIAdt" : "3HISTORIA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "3HISTORIAdt" : "3HISTORIA"}.webp`,
       description:
         "Este anhelo se consolidó en la creación de un seminario bíblico que sirviera como semillero de ministros, formándolos en las áreas bíblica, teológica y ministerial.",
       title: "un sueño con propósito",
     },
     {
-      image: `/assets/${isDesktop ? "4HISTORIAdt" : "4HISTORIA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "4HISTORIAdt" : "4HISTORIA"}.webp`,
       description:
         "El propósito: que la nueva generación de ministros esté plenamente preparada para sostener y dar continuidad al gran avivamiento que por más de 25 años Dios ha puesto en la iglesia.",
       title: `Preparando una 
 generación de fuego`,
     },
     {
-      image: `/assets/${isDesktop ? "5HISTORIAdt.webp" : "5historia1.webp"}`,
+      image: `/assets/${isDesktop || isTablet ? "5HISTORIAdt.webp" : "5historia1.webp"}`,
       description:
         "En obediencia al Espíritu Santo, este sueño se hizo realidad en febrero de 2016, cuando abrió sus puertas el seminario Avivamiento Faith College, recibiendo a su primera generación de 22 estudiantes.",
       title: `Nace Avivamiento 
 Faith College`,
     },
     {
-      image: `/assets/${isDesktop ? "6HISTORIAdt" : "7HISTORIA"}.webp`,
+      image: `/assets/${isDesktop || isTablet ? "6HISTORIAdt" : "7HISTORIA"}.webp`,
       description:
         "Estos jóvenes pioneros, motivados y comprometidos, culminaron tres años de formación, convirtiéndose en la primera promoción de ministros acreditados con el título en Teología Bíblica y Ministerial con énfasis en Consejería.",
       title: `Una promoción 
 con legado`,
     },
     {
-      image: `${isDesktop ? "" : "/assets/6HISTORIA.webp"}`,
+      image: `${isDesktop ? "" : isTablet ? "/assets/HISTORIAdt.webp" : "/assets/6HISTORIA.webp"}`,
       description:
         "El deseo de los Pastores va más allá. Su meta es que la iglesia se convierta en la comunidad mejor preparada en Biblia de América Latina, a través de una universidad reconocida por el Estado y con impacto en toda la región",
       title: `Una visión 
@@ -100,7 +102,7 @@ sin límites`,
                     sx={{
                       mt: 3,
                       width: "100%",
-                      height: isDesktop ? "600px" : "650px",
+                      height: isDesktop ? "600px" : isTablet ? "75vw" : "650px",
                       position: "relative",
                       backgroundImage: `url(${item.image})`,
                       backgroundColor: "#1c1414",

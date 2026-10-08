@@ -1,6 +1,7 @@
 import { Box, Typography, Button, Container, Breadcrumbs, Divider, styled } from "@mui/material";
 import { Link as MuiLink } from "@mui/material";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import { useScrollToHash, useBreadcrumbClick } from "../../hooks/useHashNavigation";
 import { coursePlanPdf, virtualCostsNote, virtualInternationalCosts, virtualNationalCosts } from "../../data/costs";
 import CostsNote from "../../components/CostsNote";
@@ -58,6 +59,7 @@ function VirtualModality() {
     </MuiLink>,
   ];
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   return isDesktop ? (
     <Box
       id="Metodología"
@@ -335,7 +337,7 @@ function VirtualModality() {
           width: "100%",
           height: "420px",
           position: "relative",
-          backgroundImage: "url('/assets/Metodologiavirtualmobile.webp')",
+          backgroundImage: `url('/assets/${isTablet ? "Metodologiamodalidadvirtual" : "Metodologiavirtualmobile"}.webp')`,
           backgroundColor: "#1c1414",
           backgroundSize: "cover",
           backgroundPosition: "right",

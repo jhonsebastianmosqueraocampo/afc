@@ -3,6 +3,7 @@ import { Box, Typography, Button, Container, IconButton, Divider } from "@mui/ma
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { useNavigate } from "react-router-dom";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import HeroPurpose from "./HeroPurpose";
 import HeroCalling from "./HeroCalling";
 import HeroCareer from "./HeroCareer";
@@ -14,6 +15,7 @@ function Home() {
   const [showVideo, setShowVideo] = useState(false);
   const navigate = useNavigate();
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   useEffect(() => {
     heroIndex = (heroIndex + 1) % heroVariants.length;
     setHeroVariant(heroVariants[heroIndex]);
@@ -483,7 +485,7 @@ function Home() {
           <Box
             sx={{
               width: "100%",
-              height: "270px",
+              height: isTablet ? "52vw" : "270px",
               overflow: "hidden",
             }}
           >
@@ -491,7 +493,7 @@ function Home() {
               component="img"
               loading="lazy"
               decoding="async"
-              src="/assets/6HISTORIA.webp"
+              src={isTablet ? "/assets/6HISTORIAdt.webp" : "/assets/6HISTORIA.webp"}
               alt="image"
               sx={{
                 width: "100%",

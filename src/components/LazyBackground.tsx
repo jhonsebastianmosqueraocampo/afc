@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Box, Skeleton, type SxProps, type Theme } from "@mui/material";
 import useIsDesktop from "../hooks/useIsDesktop";
+import useIsTablet from "../hooks/useIsTablet";
 
 interface LazyBackgroundProps {
   src: string;
@@ -16,7 +17,11 @@ function LazyBackground({ src, mobileSrc, height = "100vh", sx, children }: Lazy
   const [isVisible, setIsVisible] = useState(false);
   const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const image = useIsDesktop() ? src : (mobileSrc ?? src);
+  const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
+  // En tablet se usa la foto de escritorio con una altura proporcional para no recortarla de más.
+  const image = isDesktop || isTablet ? src : (mobileSrc ?? src);
+  const boxHeight = isTablet && mobileSrc && height === "100vh" ? "75vw" : height;
   const isLoaded = loadedSrc === image;
 
   useEffect(() => {
@@ -43,7 +48,7 @@ function LazyBackground({ src, mobileSrc, height = "100vh", sx, children }: Lazy
   return (
     <Box
       ref={containerRef}
-      sx={{ width: "100%", height, position: "relative", overflow: "hidden", backgroundColor: "#1c1414" }}
+      sx={{ width: "100%", height: boxHeight, position: "relative", overflow: "hidden", backgroundColor: "#1c1414" }}
     >
       {!isLoaded && (
         <Skeleton

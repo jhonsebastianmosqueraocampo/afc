@@ -3,6 +3,7 @@ import { Box, Typography, Button, Container, Breadcrumbs, Divider } from "@mui/m
 import { Link as MuiLink } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import { useBreadcrumbClick } from "../../hooks/useHashNavigation";
 import OfferHero from "./OfferHero";
 import TeamSwiper from "../../components/team/TeamSwiper";
@@ -89,6 +90,7 @@ function AcademicOffer() {
     </MuiLink>,
   ];
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   return (
     <>
       <Box id="Énfasis Académico">
@@ -687,7 +689,8 @@ function AcademicOffer() {
             sx={{
               mt: 2,
               width: "100%",
-              height: "320px",
+              height: isTablet ? "auto" : "320px",
+              aspectRatio: isTablet ? "390 / 340" : "auto",
               position: "relative",
               backgroundImage: "url('/assets/Perfil-egresado-mobile.webp')",
               backgroundColor: "#1c1414",
@@ -767,7 +770,7 @@ function AcademicOffer() {
             sx={{
               mt: 3,
               width: "100%",
-              height: "500px",
+              height: isTablet ? "calc(100vw * 500 / 390)" : "500px",
               position: "relative",
               backgroundImage: "url('/assets/AREASACADEEMICAS.webp')",
               backgroundColor: "#1c1414",

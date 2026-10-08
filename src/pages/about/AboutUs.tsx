@@ -12,6 +12,7 @@ import {
 import { Link as MuiLink } from "@mui/material";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import useIsDesktop from "../../hooks/useIsDesktop";
+import useIsTablet from "../../hooks/useIsTablet";
 import { useScrollToHash, useBreadcrumbClick } from "../../hooks/useHashNavigation";
 import AboutHero from "./AboutHero";
 import HistorySwiper from "./HistorySwiper";
@@ -37,6 +38,7 @@ const values = [
 function AboutUs() {
   const [expanded, setExpanded] = useState<string | false>(false);
   const isDesktop = useIsDesktop();
+  const isTablet = useIsTablet();
   useScrollToHash();
   const handleBreadcrumbClick = useBreadcrumbClick();
   const aboutBreadcrumbs = [
@@ -459,9 +461,9 @@ function AboutUs() {
         sx={{
           mt: 10,
           width: "100%",
-          height: "820px",
+          height: isTablet ? "75vw" : "820px",
           position: "relative",
-          backgroundImage: `url('/assets/${isDesktop ? "12AVIVAMIENTO" : "13AVIVAMIENTO"}.webp')`,
+          backgroundImage: `url('/assets/${isDesktop || isTablet ? "12AVIVAMIENTO" : "13AVIVAMIENTO"}.webp')`,
           backgroundColor: "#1c1414",
           backgroundSize: "cover",
           backgroundPosition: "start",
