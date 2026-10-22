@@ -125,7 +125,7 @@ const presencialFaqs = [
   },
   {
     question: "¿Existen becas o descuentos para estudiantes?",
-    answer: "Sí, el seminario ofrece ciertos descuentos al inicio del año académico.",
+    answer: "En modalidad presencial no manejamos becas por el momento. En modalidad virtual, el seminario ofrece ciertos descuentos al inicio del año académico.",
   },
   {
     question: "¿Cuánto dura la formación en el seminario?",
@@ -523,7 +523,7 @@ function AdmissionsPresencial() {
               mb: 2,
             }}
           >
-            Costos 2026
+            Costos
           </Typography>
           <Box
             sx={{
@@ -834,7 +834,7 @@ function AdmissionsPresencial() {
             mb: 2,
           }}
         >
-          Costos 2026
+          Costos
         </Typography>
         <Box
           sx={{

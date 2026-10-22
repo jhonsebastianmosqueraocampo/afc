@@ -55,7 +55,7 @@ function VirtualModality() {
       Modalidad Virtual
     </MuiLink>,
     <MuiLink underline="none" color="#A61A2D" href="#" onClick={handleBreadcrumbClick} key="4">
-      Costos 2026
+      Costos
     </MuiLink>,
   ];
   const isDesktop = useIsDesktop();
@@ -181,7 +181,7 @@ function VirtualModality() {
               textTransform: "uppercase",
             }}
           >
-            Costos 2026
+            Costos
           </Typography>
           <Typography
             sx={{
@@ -451,7 +451,7 @@ function VirtualModality() {
             mb: 2,
           }}
         >
-          Costos 2026
+          Costos
         </Typography>
         <Typography
           sx={{

@@ -392,7 +392,7 @@ function AdmissionsVirtual() {
               mb: 2,
             }}
           >
-            Costos 2026
+            Costos
           </Typography>
           <Box display="flex" justifyContent="space-between" alignItems="flex-start" gap={1}>
             <Box>
@@ -704,7 +704,7 @@ function AdmissionsVirtual() {
             textTransform: "uppercase",
           }}
         >
-          Costos 2026
+          Costos
         </Typography>
         <Box display="flex" justifyContent="space-between" alignItems="flex-start" gap={1}>
           <Box>

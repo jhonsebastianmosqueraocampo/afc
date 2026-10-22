@@ -53,7 +53,7 @@ function PresencialModality() {
       Modalidad Presencial
     </MuiLink>,
     <MuiLink underline="none" color="#A61A2D" href="#" onClick={handleBreadcrumbClick} key="4">
-      Costos 2026
+      Costos
     </MuiLink>,
   ];
   const isDesktop = useIsDesktop();
@@ -178,7 +178,7 @@ function PresencialModality() {
               textTransform: "uppercase",
             }}
           >
-            Costos 2026
+            Costos
           </Typography>
           <Box
             sx={{
@@ -377,7 +377,7 @@ function PresencialModality() {
             textTransform: "uppercase",
           }}
         >
-          Costos 2026
+          Costos
         </Typography>
         <Box
           sx={{
