@@ -125,7 +125,7 @@ const presencialFaqs = [
   },
   {
     question: "¿Existen becas o descuentos para estudiantes?",
-    answer: "En modalidad presencial no manejamos becas por el momento. En modalidad virtual, el seminario ofrece ciertos descuentos al inicio del año académico.",
+    answer: "Por el momento no manejamos, esperamos pronto implementarlas.",
   },
   {
     question: "¿Cuánto dura la formación en el seminario?",
